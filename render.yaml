@@ -2,8 +2,10 @@ services:
   - type: web
     name: smart-home-dashboard
     env: node
-    buildCommand: npm ci && npm run build
+    buildCommand: chmod +x render-build.sh && ./render-build.sh
     startCommand: npm start
     envVars:
       - key: NODE_VERSION
         value: 18.17.0
+      - key: NEXT_BUILD_TIMEOUT
+        value: 300
