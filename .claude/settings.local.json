@@ -19,7 +19,10 @@
       "Bash(git push:*)",
       "Bash(npx expose:*)",
       "Bash(npx ngrok:*)",
-      "Bash(ssh:*)"
+      "Bash(ssh:*)",
+      "Bash(npm run build:*)",
+      "Bash(git rm:*)",
+      "Bash(git mv:*)"
     ],
     "deny": [],
     "ask": []
