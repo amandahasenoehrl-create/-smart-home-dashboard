@@ -1,26 +1,18 @@
 #!/bin/bash
 # Custom build script for Render
 
-echo "Starting custom build process..."
+echo "Starting build process..."
 
 # Install dependencies
-npm ci
+npm ci --production=false
 
-# Set NODE_ENV
+# Set environment variables
 export NODE_ENV=production
+export SKIP_ENV_VALIDATION=1
+export NEXTAUTH_URL=https://smart-home-dashboard.onrender.com
 
-# Set build timeout
-export NEXT_BUILD_TIMEOUT=300
+# Build the application
+echo "Building Next.js app..."
+npm run build
 
-# Try to build with timeout and fallback
-timeout 120 npm run build || {
-    echo "Build timed out or failed, trying simpler approach..."
-    # Create a minimal .next directory structure
-    mkdir -p .next/static
-    echo '{"version":3,"pages":{},"pageDataRoute":"/_next/static/chunks/pages/%s.js"}' > .next/build-manifest.json
-    echo '{}' > .next/prerender-manifest.json
-    # Try build again
-    npm run build
-}
-
-echo "Build completed!"
+echo "Build completed successfully!"

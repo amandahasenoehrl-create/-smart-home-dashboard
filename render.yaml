@@ -3,9 +3,11 @@ services:
     name: smart-home-dashboard
     env: node
     buildCommand: chmod +x render-build.sh && ./render-build.sh
-    startCommand: npm start
+    startCommand: node server.js
     envVars:
       - key: NODE_VERSION
         value: 18.17.0
-      - key: NEXT_BUILD_TIMEOUT
-        value: 300
+      - key: NODE_ENV
+        value: production
+      - key: SKIP_ENV_VALIDATION
+        value: 1

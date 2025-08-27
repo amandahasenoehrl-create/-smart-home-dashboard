@@ -6,12 +6,10 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  experimental: {
-    serverComponentsExternalPackages: ['@supabase/supabase-js']
-  },
-  staticPageGenerationTimeout: 60,
-  generateBuildId: async () => {
-    return 'build-' + Date.now()
+  output: 'standalone',
+  trailingSlash: true,
+  images: {
+    unoptimized: true
   }
 };
 
