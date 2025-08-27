@@ -2,12 +2,10 @@ services:
   - type: web
     name: smart-home-dashboard
     env: node
-    buildCommand: chmod +x render-build.sh && ./render-build.sh
-    startCommand: node server.js
+    buildCommand: npm install && npm run build
+    startCommand: npm start
     envVars:
       - key: NODE_VERSION
-        value: 18.17.0
+        value: 18
       - key: NODE_ENV
         value: production
-      - key: SKIP_ENV_VALIDATION
-        value: 1

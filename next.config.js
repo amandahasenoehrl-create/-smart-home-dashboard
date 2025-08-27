@@ -5,11 +5,6 @@ const nextConfig = {
   },
   typescript: {
     ignoreBuildErrors: true,
-  },
-  output: 'standalone',
-  trailingSlash: true,
-  images: {
-    unoptimized: true
   }
 };
 
