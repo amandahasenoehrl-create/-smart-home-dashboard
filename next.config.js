@@ -5,11 +5,6 @@ const nextConfig = {
   },
   typescript: {
     ignoreBuildErrors: true,
-  },
-  distDir: 'build',
-  trailingSlash: true,
-  images: {
-    unoptimized: true
   }
 };
 

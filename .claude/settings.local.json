@@ -16,7 +16,10 @@
       "Bash(git config:*)",
       "Bash(git remote add:*)",
       "Bash(git branch:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(npx expose:*)",
+      "Bash(npx ngrok:*)",
+      "Bash(ssh:*)"
     ],
     "deny": [],
     "ask": []
